@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ Copyright 2016 Michael Sladoje and Mike Schälchli. All Rights Reserved.
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory
+        android:title="General">
+        <ch.zhaw.facerecognition.Helpers.SwitchPreference
+            android:title="Camera"
+            android:key="key_front_camera"
+            android:defaultValue="false"
+            android:switchTextOn="Front"
+            android:switchTextOff="Back"/>
+        <ch.zhaw.facerecognition.Helpers.EditTextPreference
+            android:title="Maximum Camera View Width"
+            android:key="key_maximum_camera_view_width"
+            android:defaultValue="320"
+            android:numeric="integer"
+            />
+        <ch.zhaw.facerecognition.Helpers.EditTextPreference
+            android:title="Maximum Camera View Height"
+            android:key="key_maximum_camera_view_height"
+            android:defaultValue="240"
+            android:numeric="integer"
+            />
+        <Preference
+            android:title="Default Settings"
+            android:key="key_default_button"
+            android:summary="Reset all settings to default"/>
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="Add Person">
+        <ch.zhaw.facerecognition.Helpers.EditTextPreference
+            android:title="Number of pictures"
+            android:key="key_numberOfPictures"
+            android:defaultValue="20"
+            android:numeric="integer"
+            />
+        <ch.zhaw.facerecognition.Helpers.EditTextPreference
+            android:title="Time between photos (in ms)"
+            android:defaultValue="500"
+            android:numeric="integer"
+            android:key="key_timerDiff"/>
+        <ch.zhaw.facerecognition.Helpers.EditTextPreference
+            android:title="Face size: N (Resize to N x N)"
+            android:defaultValue="160"
+            android:numeric="integer"
+            android:key="key_faceSize"/>
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="TensorFlow">
+        <ch.zhaw.facerecognition.Helpers.EditTextPreference
+            android:title="Input Size"
+            android:defaultValue="160"
+            android:numeric="integer"
+            android:key="key_inputSize"/>
+        <ch.zhaw.facerecognition.Helpers.EditTextPreference
+            android:title="Image mean"
+            android:defaultValue="128"
+            android:numeric="integer"
+            android:key="key_imageMean" />
+        <ch.zhaw.facerecognition.Helpers.EditTextPreference
+            android:title="Image Std"
+            android:defaultValue="128"
+            android:numeric="integer"
+            android:key="key_imageStd" />
+        <ch.zhaw.facerecognition.Helpers.EditTextPreference
+            android:title="Output size"
+            android:defaultValue="128"
+            android:numeric="integer"
+            android:key="key_outputSize"/>
+        <ch.zhaw.facerecognition.Helpers.EditTextPreference
+            android:title="Input layer"
+            android:defaultValue="input"
+            android:key="key_inputLayer"/>
+        <ch.zhaw.facerecognition.Helpers.EditTextPreference
+            android:title="Output layer"
+            android:defaultValue="embeddings"
+            android:key="key_outputLayer"/>
+        <ch.zhaw.facerecognition.Helpers.EditTextPreference
+            android:title="Model file"
+            android:defaultValue="optimized_facenet.pb"
+            android:key="key_modelFileTensorFlow"/>
+    </PreferenceCategory>
+</PreferenceScreen>
